@@ -20,6 +20,7 @@
             // Init variables
             $scope.boxes = [];
             $scope.showResults = false;
+            $scope.timeElapsed = '';
 
             for (var i = 0; i < 300; i++) {
                 $http.get(uri)
@@ -29,12 +30,12 @@
 
                         if (counter == 0) {
                             var time = new Date().getTime() - start.getTime();
-                            $("#timeOccured").text("Time elapsed (ms): " + time);
+                            $scope.timeElapsed = 'Time elapsed (ms): ' + time;
                             $scope.showResults = true;
                         }
                     })
                         .error(function (error) {
-                            $("#timeOccured").text(error.Message);
+                            $scope.timeElapsed = error.Message;
                         }).finally(function () {
                         });
             }
