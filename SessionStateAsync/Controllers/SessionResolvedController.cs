@@ -17,6 +17,7 @@ namespace SessionStateAsync.Controllers
         {
             try
             {
+                System.Threading.Thread.Sleep(10);
                 //object name = System.Web.HttpContext.Current.Session["Name"];
                 Random rnd = new Random();
                 int index = rnd.Next(0, boxes.Count);

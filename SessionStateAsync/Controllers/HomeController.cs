@@ -18,6 +18,7 @@ namespace SessionStateAsync.Controllers
 
         public string GetBox()
         {
+            System.Threading.Thread.Sleep(10);
             Random rnd = new Random();
             int index = rnd.Next(0, boxes.Count);
 
